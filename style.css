@@ -1,0 +1,276 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Makes the jump links smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(images/bg800bulbs.jpg);
+  background-color: #544d47;
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrapper {
+  @media (min-width: 40em) {
+    max-width: 80vw;
+    margin-top: 2em;
+    margin-bottom: 8em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 80em) {
+    max-width: 50vw;
+  }
+}
+
+header {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+
+  @media (min-width: 40em) {
+    padding: 1.6em;
+    border-radius: 10px 10px 0px 0px;
+  }
+}
+
+nav {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-around;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1em;
+}
+
+a {
+  color: black;
+}
+
+.heroimage {
+  width: 100%;
+}
+
+main {
+  background-color: white;
+  padding: 2em;
+}
+
+/* Trying out clamp */
+h1 {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  margin-bottom: 0.6em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid black;
+}
+
+h2 {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid black;
+
+  @media (min-width: 40em) {
+    margin-top: 4em;
+  }
+}
+
+p {
+  line-height: 1.4;
+  margin-bottom: 1em;
+}
+
+section p:last-of-type,
+footer p {
+  margin-bottom: 0;
+}
+
+.float-left,
+.float-right {
+  margin: auto;
+  margin-bottom: 1em;
+  width: 100vw;
+}
+
+@media (min-width: 30em) {
+  .float-right {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    width: auto;
+  }
+
+  .float-left {
+    float: left;
+    margin-right: 1em;
+    width: auto;
+  }
+}
+
+/* Back to top link styled like a button */
+.b2t {
+  background-color: #e4e4e4;
+  padding: 0.6em;
+  border: 1px solid black;
+  border-radius: 50px;
+  display: block;
+  width: clamp(12em, 30vw, 15em);
+  text-align: center;
+  text-decoration: none;
+  margin-top: 4em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials h2 {
+  border-bottom: none;
+}
+
+/* Used negative margins to bring out the testimonial blockquotes */
+.testimonials blockquote {
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  margin-bottom: 2.3em;
+  padding: 1.6em;
+  font-size: 1.1rem;
+  background-color: #f8fffe;
+  border: 1px solid #b0d2cb;
+  border-left-width: 8px;
+
+  @media (min-width: 40em) {
+    padding-right: 3em;
+  }
+}
+
+.quote {
+  margin-bottom: 0;
+}
+
+.credit {
+  font-weight: 700;
+}
+
+/* Form styling - based on dcode video https://youtu.be/GcPi65geFlo?si=0u222MZIxeNHo9IH  */
+
+form {
+  background-color: #b0d2cb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  border-radius: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  width: 90%;
+  max-width: 425px;
+}
+
+/* The below can be used to make the flex item size fit the content rather than be full width */
+form-item > * {
+  align-self: flex-start;
+}
+
+.form-item label {
+  margin-bottom: 0.2em;
+}
+
+.form-item input,
+.form-item textarea {
+  appearance: none;
+  width: 100%;
+  max-width: 425px;
+  padding: 0.8em;
+  font-size: 0.9em;
+
+  outline: none;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: background-color 0.25s;
+}
+
+.form-item textarea {
+  height: 200px;
+  resize: none;
+}
+
+.form-item input:focus {
+  background-color: #ffffff;
+}
+
+.checkboxes {
+  display: flex;
+  gap: 3em;
+}
+
+button[type="submit"] {
+  padding: 0.6em;
+  font-size: 1rem;
+  width: clamp(10em, 20vw, 13em);
+}
+
+footer {
+  background-color: #d66717;
+  padding: 1.6em;
+  color: white;
+  font-weight: 700;
+
+  @media (min-width: 40em) {
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
+/* CSS for thanks.html to centre the thank you message on the page */
+.thanks {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
